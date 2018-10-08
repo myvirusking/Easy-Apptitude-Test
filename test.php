@@ -42,7 +42,7 @@ if($_GET['topic']){
 		}
 
 		$obtained_marks = $corrected_questions * $result['each_carry'];
-		$result = ($obtained_marks >= 5) ? 'PASS' : 'FAIL';
+		$result = ($obtained_marks >= floor($total_marks/2)) ? 'PASS' : 'FAIL';
 
 		$sql = "insert into result values(NULL,'$test_topic','$total_question','$corrected_questions','$total_marks','$obtained_marks','$result',NULL,'$login_id')";
 	
